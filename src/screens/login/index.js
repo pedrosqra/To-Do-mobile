@@ -19,7 +19,7 @@ function Home() {
       <Back source={back}>
         <InputArea>
           <Input placeholder="email" />
-          <Input placeholder="senha" />
+          <Input secureTextEntry placeholder="senha" />
           <Login>
             <ButtonText>Login</ButtonText>
           </Login>
