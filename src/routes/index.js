@@ -2,6 +2,9 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../screens/home';
 import Login from '../screens/login';
+import RegisterScreen from '../screens/register';
+import ScreenHeader from '../screens/register/components/header';
+import HomeHeader from '../screens/home/components/Header';
 
 const AppStack = createStackNavigator();
 
@@ -16,6 +19,7 @@ function Routes() {
         headerTintColor: '#008b8b',
         headerTitleStyle: {
           fontWeight: 'bold',
+          fontSize: 28,
         },
       }}
       initialRouteName="Login">
@@ -25,9 +29,22 @@ function Routes() {
         options={{title: 'To Do'}}
       />
       <AppStack.Screen
+        component={RegisterScreen}
+        name="Register"
+        options={{
+          headerTitle: () => <ScreenHeader />,
+          headerStyle: {backgroundColor: '#6a5acd'},
+          headerTintColor: '#fff',
+        }}
+      />
+      <AppStack.Screen
         component={Home}
         name="Home"
-        options={{title: 'Início'}}
+        options={{
+          headerTitle: () => <HomeHeader />,
+          headerStyle: {backgroundColor: '#6a5acd'},
+          headerTintColor: '#fff',
+        }}
       />
     </AppStack.Navigator>
   );

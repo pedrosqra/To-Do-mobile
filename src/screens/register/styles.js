@@ -16,7 +16,7 @@ export const Back = styled.ImageBackground`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #b0e0e6;
+  background-color: #6a5acd;
   margin-top: -13%;
   margin-bottom: -13%;
 `;
@@ -24,7 +24,7 @@ export const Back = styled.ImageBackground`
 export const InputArea = styled.View`
   justify-content: center;
   align-items: center;  
-  background: #008B8B;
+  background: #cd266a;
   border-radius: 10px;
   height: 55%
   width: 90%;
@@ -38,7 +38,7 @@ export const Input = styled.TextInput`
   padding: 18px;
 `;
 
-export const Login = styled.TouchableOpacity`
+export const Register = styled.TouchableOpacity`
   background-color: #fff;
   justify-content: center;
   align-items: center;
@@ -51,15 +51,5 @@ export const Login = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   font-size: 16px;
   font-weight: bold;
-  color: #008b8b;
-`;
-
-export const Register = styled.TouchableOpacity`
-  background-color: #fff;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15%;
-  border-radius: 8px;
-  padding: 20px;
+  color: #4169e1;
 `;

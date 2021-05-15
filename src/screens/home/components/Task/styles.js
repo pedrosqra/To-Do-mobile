@@ -35,7 +35,7 @@ export const ButtonsContainer = styled.View`
 
 export const DeleteBtn = styled.TouchableOpacity`
   margin-left: auto;
-  background-color: red;
+  background-color: #a056c5;
   padding: 10px;
   height: 45%;
   align-items: center;

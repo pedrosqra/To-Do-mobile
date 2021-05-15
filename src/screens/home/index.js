@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Container, List, Title} from './styles';
+import {Container, List, Title, Add, AddIcon, AddText} from './styles';
 import Task from './components/Task';
 
 const DATA = [
@@ -41,6 +41,10 @@ function Home() {
         renderItem={({item}) => <Task task={item} />}
         keyExtractor={item => item.id}
       />
+      <Add>
+        <AddIcon />
+        <AddText>Adicionar</AddText>
+      </Add>
     </Container>
   );
 }
