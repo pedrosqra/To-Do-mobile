@@ -1,6 +1,15 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Container, List, Title, Add, AddIcon, AddText} from './styles';
+import {
+  Container,
+  List,
+  Title,
+  Add,
+  AddIcon,
+  AddText,
+  TasksIcon,
+  TitleContainer,
+} from './styles';
 import Task from './components/Task';
 
 const DATA = [
@@ -35,7 +44,10 @@ function Home() {
 
   return (
     <Container>
-      <Title>Suas Tarefas</Title>
+      <TitleContainer>
+        <TasksIcon />
+        <Title>Suas Tarefas</Title>
+      </TitleContainer>
       <List
         data={DATA}
         renderItem={({item}) => <Task task={item} />}

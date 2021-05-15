@@ -5,6 +5,7 @@ import Login from '../screens/login';
 import RegisterScreen from '../screens/register';
 import ScreenHeader from '../screens/register/components/header';
 import HomeHeader from '../screens/home/components/Header';
+import EditScreen from '../screens/editTask/index';
 
 const AppStack = createStackNavigator();
 
@@ -42,6 +43,15 @@ function Routes() {
         name="Home"
         options={{
           headerTitle: () => <HomeHeader />,
+          headerStyle: {backgroundColor: '#6a5acd'},
+          headerTintColor: '#fff',
+        }}
+      />
+      <AppStack.Screen
+        component={EditScreen}
+        name="Edit"
+        options={{
+          headerTitle: 'edit',
           headerStyle: {backgroundColor: '#6a5acd'},
           headerTintColor: '#fff',
         }}

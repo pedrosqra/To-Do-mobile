@@ -5,7 +5,7 @@ import {} from 'react-native-vector-icons';
 function HomeHeader() {
   return (
     <Header>
-      <HeaderText>Suas Tarefas</HeaderText>
+      <HeaderText>To Do</HeaderText>
     </Header>
   );
 }

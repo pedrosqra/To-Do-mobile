@@ -10,6 +10,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: space-between;
   height: 120px;
+  elevation: 10;
 `;
 
 export const TaskData = styled.TouchableOpacity`
@@ -20,12 +21,14 @@ export const TaskData = styled.TouchableOpacity`
 
 export const Title = styled.Text`
   font-weight: bold;
+  color: #574660;
   font-size: 18px;
 `;
 
 export const Description = styled.TextInput`
   overflow: scroll;
   max-width: 70%;
+  color: #575656;
 `;
 
 export const ButtonsContainer = styled.View`

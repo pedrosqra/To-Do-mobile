@@ -12,5 +12,5 @@ export const HeaderText = styled.Text`
   font-weight: bold;
   font-size: 30px;
   color: #fff;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 `;
