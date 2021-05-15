@@ -16,7 +16,7 @@ export const Back = styled.ImageBackground`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #6a5acd;
+  background-color: #4b0082;
   margin-top: -13%;
   margin-bottom: -13%;
 `;
@@ -24,9 +24,9 @@ export const Back = styled.ImageBackground`
 export const InputArea = styled.View`
   justify-content: center;
   align-items: center;  
-  background: #cd266a;
+  background: #A52A2A;
   border-radius: 10px;
-  height: 80%
+  height: 85%
   width: 90%;
   elevation: 6;
 `;
@@ -40,13 +40,13 @@ export const Input = styled.TextInput`
 `;
 
 export const Register = styled.TouchableOpacity`
-  background-color: #6a5acd;
+  background-color: #4b0082;
   justify-content: center;
   align-items: center;
   width: 80%;
   margin-top: 10px;
   border-radius: 50px;
-  padding: 15px;
+  padding: 16px;
 `;
 
 export const ButtonText = styled.Text`
@@ -55,7 +55,33 @@ export const ButtonText = styled.Text`
   color: #fff;
 `;
 
-export const RegisterImage = styled.Image`
+export const AddTaskImage = styled.Image`
   width: 60%;
-  height: 40%;
+  height: 47%;
+`;
+
+export const Priority = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2%;
+`;
+
+export const PriorityPicker = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const PriorityText = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffff;
+`;
+
+export const PriorityTitle = styled.Text`
+  font-size: 16px;
+  margin-right: 5%;
+  font-weight: bold;
+  color: #ffff;
 `;

@@ -7,8 +7,10 @@ import {
   Container,
   ButtonText,
   Back,
+  RegisterImage,
 } from './styles';
 import back from '../../assets/login.png';
+import girlTask from '../../assets/girlTask.png';
 
 function RegisterScreen() {
   const navigation = useNavigation();
@@ -20,6 +22,7 @@ function RegisterScreen() {
     <Container>
       <Back source={back}>
         <InputArea>
+          <RegisterImage source={girlTask} />
           <Input placeholder="nickname" />
           <Input placeholder="email" />
           <Input secureTextEntry placeholder="senha" />

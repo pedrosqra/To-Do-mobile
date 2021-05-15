@@ -26,16 +26,17 @@ export const InputArea = styled.View`
   align-items: center;  
   background: #008B8B;
   border-radius: 10px;
-  height: 55%
+  height: 70%
   width: 90%;
+  elevation: 6;
 `;
 
 export const Input = styled.TextInput`
   background-color: #fff;
   width: 80%;
   margin-top: 10px;
-  border-radius: 8px;
-  padding: 18px;
+  border-radius: 50px;
+  padding: 12px;
 `;
 
 export const Login = styled.TouchableOpacity`
@@ -44,22 +45,35 @@ export const Login = styled.TouchableOpacity`
   align-items: center;
   width: 80%;
   margin-top: 10px;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 50px;
+  padding: 15px;
 `;
 
-export const ButtonText = styled.Text`
+export const ButtonTextLogin = styled.Text`
   font-size: 16px;
   font-weight: bold;
   color: #008b8b;
 `;
 
+export const ButtonTextRegister = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffff;
+`;
+
 export const Register = styled.TouchableOpacity`
-  background-color: #fff;
+  background-color: #66cdaa;
   width: 80%;
   justify-content: center;
   align-items: center;
-  margin-top: 15%;
-  border-radius: 8px;
-  padding: 20px;
+  margin-top: 9%;
+  border-radius: 50px;
+  padding: 18px;
+  elevation: 50;
+`;
+
+export const LoginImage = styled.Image`
+  width: 60%;
+  height: 43%;
+  margin-bottom: 4%;
 `;

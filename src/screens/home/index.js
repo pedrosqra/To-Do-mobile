@@ -9,6 +9,9 @@ import {
   AddText,
   TasksIcon,
   TitleContainer,
+  FilterIcon,
+  Filter,
+  Buttons,
 } from './styles';
 import Task from './components/Task';
 
@@ -42,6 +45,10 @@ const DATA = [
 function Home() {
   const navigation = useNavigation();
 
+  function handleCreateTask() {
+    navigation.navigate('Add');
+  }
+
   return (
     <Container>
       <TitleContainer>
@@ -53,10 +60,15 @@ function Home() {
         renderItem={({item}) => <Task task={item} />}
         keyExtractor={item => item.id}
       />
-      <Add>
-        <AddIcon />
-        <AddText>Adicionar</AddText>
-      </Add>
+      <Buttons>
+        <Add onPress={handleCreateTask}>
+          <AddIcon />
+          <AddText>Adicionar</AddText>
+        </Add>
+        <Filter>
+          <FilterIcon />
+        </Filter>
+      </Buttons>
     </Container>
   );
 }

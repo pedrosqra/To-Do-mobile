@@ -12,7 +12,6 @@ export const Container = styled.SafeAreaView`
 export const TitleContainer = styled.View`
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 5px;
 `;
 
 export const List = styled.FlatList.attrs({
@@ -30,15 +29,10 @@ export const Title = styled.Text`
 `;
 
 export const Add = styled.TouchableOpacity`
-  position: absolute;
-  background: red;
-  bottom: 4%;
   flex-direction: row;
   height: 55px;
   width: 40%;
   padding: 8px;
-  align-self: flex-start;
-  margin-left: 10%;
   border-radius: 25px;
   background-color: #a056c5;
   justify-content: space-evenly;
@@ -60,4 +54,28 @@ export const AddIcon = styled(AntIcon).attrs({name: 'plus'})`
 export const TasksIcon = styled(FA5Icon).attrs({name: 'tasks'})`
   font-size: 35px;
   color: #383737;
+`;
+
+export const Filter = styled.TouchableOpacity`
+  height: 55px;
+  width: 15%;
+  padding: 8px;
+  border-radius: 25px;
+  background-color: #a056c5;
+  elevation: 25;
+`;
+
+export const FilterIcon = styled(AntIcon).attrs({name: 'filter'})`
+  font-size: 35px;
+  color: #ffff;
+  padding: 2px;
+`;
+
+export const Buttons = styled.View`
+  position: absolute;
+  bottom: 4%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
 `;

@@ -26,32 +26,62 @@ export const InputArea = styled.View`
   align-items: center;  
   background: #cd266a;
   border-radius: 10px;
-  height: 55%
+  height: 85%
   width: 90%;
+  elevation: 6;
 `;
 
 export const Input = styled.TextInput`
   background-color: #fff;
   width: 80%;
   margin-top: 10px;
-  border-radius: 8px;
-  padding: 18px;
+  border-radius: 50px;
+  padding: 12px;
 `;
 
-export const Picker = styled.Picker``;
-
 export const Register = styled.TouchableOpacity`
-  background-color: #fff;
+  background-color: #6a5acd;
   justify-content: center;
   align-items: center;
   width: 80%;
   margin-top: 10px;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 50px;
+  padding: 16px;
 `;
 
 export const ButtonText = styled.Text`
   font-size: 16px;
   font-weight: bold;
-  color: #4169e1;
+  color: #ffff;
+`;
+
+export const EditImage = styled.Image`
+  width: 60%;
+  height: 47%;
+`;
+
+export const Priority = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2%;
+`;
+
+export const PriorityPicker = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const PriorityText = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffff;
+`;
+
+export const PriorityTitle = styled.Text`
+  font-size: 16px;
+  margin-right: 5%;
+  font-weight: bold;
+  color: #ffff;
 `;

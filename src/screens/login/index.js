@@ -6,10 +6,13 @@ import {
   Register,
   InputArea,
   Container,
-  ButtonText,
+  ButtonTextLogin,
+  ButtonTextRegister,
   Back,
+  LoginImage,
 } from './styles';
 import back from '../../assets/login.png';
+import tasksLife from '../../assets/loginScreen.png';
 
 function Home() {
   const navigation = useNavigation();
@@ -26,14 +29,15 @@ function Home() {
     <Container>
       <Back source={back}>
         <InputArea>
+          <LoginImage source={tasksLife} />
           <Input placeholder="email" />
           <Input secureTextEntry placeholder="senha" />
           <Login onPress={handleLogin}>
-            <ButtonText>Login</ButtonText>
+            <ButtonTextLogin>Login</ButtonTextLogin>
           </Login>
         </InputArea>
         <Register onPress={handleCreateAccount}>
-          <ButtonText>Criar conta</ButtonText>
+          <ButtonTextRegister>Criar conta</ButtonTextRegister>
         </Register>
       </Back>
     </Container>

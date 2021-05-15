@@ -9,16 +9,17 @@ import {
   Container,
   ButtonText,
   Back,
-  EditImage,
+  AddTaskImage,
   Priority,
   PriorityPicker,
   PriorityText,
   PriorityTitle,
 } from './styles';
 import back from '../../assets/login.png';
-import newTask from '../../assets/newTask.png';
+import update from '../../assets/update.png';
 
 function RegisterScreen() {
+  const navigation = useNavigation();
   const [checkedAlta, setCheckedAlta] = useState(false);
   const [checkedBaixa, setCheckedBaixa] = useState(false);
 
@@ -38,18 +39,19 @@ function RegisterScreen() {
     }
   }
 
-  const navigation = useNavigation();
-
   function handleCreateAccount() {
     navigation.navigate('Home');
   }
 
+  function handleCreateAccount() {
+    navigation.navigate('Home');
+  }
   return (
     <Container>
       <Back source={back}>
         <InputArea>
-          <EditImage source={newTask} />
-          <Input placeholder="titulo" />
+          <AddTaskImage source={update} />
+          <Input placeholder="título" />
           <Input placeholder="descrição (max. 40 caracteres)" />
           <Priority>
             <PriorityTitle>Prioridade: </PriorityTitle>
