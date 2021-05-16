@@ -21,8 +21,6 @@ function RegisterScreen() {
   const [password, setPass] = useState('');
 
   async function handleRegister() {
-    console.log(email, password);
-
     try {
       const response = await api.post('/register', {
         nickname,
@@ -30,8 +28,6 @@ function RegisterScreen() {
         password,
       });
       navigation.navigate('Login');
-      console.log(response.data);
-      console.log(response.data.error);
     } catch (err) {
       Alert.alert(
         'Falha no Registro',
@@ -67,7 +63,7 @@ function RegisterScreen() {
           />
           <Input
             secureTextEntry
-            placeholder="senha"
+            placeholder="senha (min 8 caracteres)"
             placeholderTextColor="#fff"
             value={password}
             onChangeText={password => setPass(password)}
