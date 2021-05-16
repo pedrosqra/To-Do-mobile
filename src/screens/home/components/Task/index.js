@@ -1,47 +1,29 @@
 import React from 'react';
 import {View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-
-import {
-  Container,
-  TaskData,
-  Title,
-  Description,
-  DeleteBtn,
-  ButtonsContainer,
-  EditBtn,
-  DelIcon,
-  EditIcon,
-} from './styles';
+import {Container, TaskData, Title, Description} from './styles';
 
 function Task({task}) {
   const navigation = useNavigation();
-  function handleEdit() {
-    navigation.navigate('Edit');
+
+  function handleFocusTask() {
+    navigation.navigate('TaskScreen', {
+      name: task.name,
+      description: task.description,
+      id: task._id,
+    });
   }
+
   return (
-    <Container>
+    <Container onPress={handleFocusTask}>
       <View>
         <TaskData>
           <Title>{task.name}</Title>
-          <Description
-            numberOfLines={4}
-            scrollEnabled
-            editable={false}
-            maxLength={40}
-            multiline>
+          <Description numberOfLines={3} editable={false} multiline>
             {task.description}
           </Description>
         </TaskData>
       </View>
-      <ButtonsContainer>
-        <DeleteBtn onPress={() => console.log('delete')}>
-          <DelIcon />
-        </DeleteBtn>
-        <EditBtn onPress={handleEdit}>
-          <EditIcon />
-        </EditBtn>
-      </ButtonsContainer>
     </Container>
   );
 }

@@ -40,8 +40,6 @@ function Home() {
   }, [userTasks.length, isFocused]);
 
   function handleTasksSorted(e) {
-    e.preventDefault();
-
     try {
       getData();
       async function getData() {
@@ -60,19 +58,6 @@ function Home() {
       console.log(error);
     }
   }
-
-  // async function handleDeleteTask(id) {
-  //   try {
-  //     await api.delete(`/task/${id}`, {
-  //       headers: {
-  //         Auth: 'Bearer ' + token,
-  //       },
-  //     });
-  //     setUserTasks(userTasks.filter(task => task._id !== id));
-  //   } catch (error) {
-  //     alert('Erro ao deletar tarefa.');
-  //   }
-  // }
 
   function handleCreateTask() {
     navigation.navigate('Add');

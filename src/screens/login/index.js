@@ -33,7 +33,6 @@ function Home() {
       await AsyncStorage.setItem('token', response.data.token);
       navigation.navigate('Home');
     } catch (err) {
-      console.log(err);
       Alert.alert(
         'Falha no Login',
         'Não foi possível realizar login. Cheque os campos e tente novamente',

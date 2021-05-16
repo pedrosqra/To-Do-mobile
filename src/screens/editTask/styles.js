@@ -39,7 +39,7 @@ export const Input = styled.TextInput`
   padding: 12px;
 `;
 
-export const Register = styled.TouchableOpacity`
+export const Update = styled.TouchableOpacity`
   background-color: #6a5acd;
   justify-content: center;
   align-items: center;

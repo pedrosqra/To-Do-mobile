@@ -28,7 +28,6 @@ function RegisterScreen() {
   const [priority, setPriority] = useState('baixa');
 
   async function handleCreateTask(e) {
-    await definePriority();
     try {
       getData();
       async function getData() {
@@ -42,14 +41,6 @@ function RegisterScreen() {
       }
     } catch (err) {
       console.log(err);
-    }
-  }
-
-  async function definePriority() {
-    if (checkedAlta === true) {
-      setPriority('alta');
-    } else {
-      setPriority('baixa');
     }
   }
 
@@ -93,7 +84,7 @@ function RegisterScreen() {
                 placeholder="alta"
                 status={checkedAlta ? 'checked' : 'unchecked'}
                 onPress={() => {
-                  handleSetPriorityAlta(!checkedAlta);
+                  handleSetPriorityAlta(!checkedAlta), setPriority('alta');
                 }}
               />
             </PriorityPicker>
@@ -103,7 +94,7 @@ function RegisterScreen() {
                 placeholder="alta"
                 status={checkedBaixa ? 'checked' : 'unchecked'}
                 onPress={() => {
-                  handleSetPriorityBaixa(!checkedBaixa);
+                  handleSetPriorityBaixa(!checkedBaixa), setPriority('baixa');
                 }}
               />
             </PriorityPicker>

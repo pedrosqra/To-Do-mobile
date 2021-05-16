@@ -7,6 +7,7 @@ import ScreenHeader from '../screens/register/components/header';
 import HomeHeader from '../screens/home/components/Header';
 import EditScreen from '../screens/editTask/index';
 import AddTaskScreen from '../screens/addTask/index';
+import TaskScreen from '../screens/taskScreen/index';
 
 const AppStack = createStackNavigator();
 
@@ -62,6 +63,15 @@ function Routes() {
         name="Add"
         options={{
           headerTitle: 'Adicionar Tarefa',
+          headerStyle: {backgroundColor: '#6a5acd'},
+          headerTintColor: '#fff',
+        }}
+      />
+      <AppStack.Screen
+        component={TaskScreen}
+        name="TaskScreen"
+        options={{
+          headerTitle: 'Detalhes',
           headerStyle: {backgroundColor: '#6a5acd'},
           headerTintColor: '#fff',
         }}

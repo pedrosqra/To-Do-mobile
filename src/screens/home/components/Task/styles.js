@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   width: 100%;
   background-color: white;
   margin: 10px 0;
@@ -13,7 +13,7 @@ export const Container = styled.View`
   elevation: 10;
 `;
 
-export const TaskData = styled.TouchableOpacity`
+export const TaskData = styled.View`
   flex: 1;
   height: 90%;
   padding: 10px;
@@ -26,8 +26,9 @@ export const Title = styled.Text`
 `;
 
 export const Description = styled.TextInput`
-  overflow: scroll;
-  max-width: 70%;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 90%;
   color: #575656;
 `;
 
