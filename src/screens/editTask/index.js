@@ -81,11 +81,13 @@ function RegisterScreen({route}) {
           <EditImage source={newTask} />
           <Input
             placeholder="título"
+            placeholderTextColor="#fff"
             value={title}
             onChangeText={tit => setTitle(tit)}
           />
           <Input
             placeholder="descrição"
+            placeholderTextColor="#fff"
             value={TaskDescription}
             onChangeText={desc => setDescription(desc)}
           />

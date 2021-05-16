@@ -32,11 +32,12 @@ export const InputArea = styled.View`
 `;
 
 export const Input = styled.TextInput`
-  background-color: #fff;
+  background-color: #a9a9a9;
   width: 80%;
   margin-top: 10px;
   border-radius: 50px;
   padding: 12px;
+  color: #fff;
 `;
 
 export const Update = styled.TouchableOpacity`

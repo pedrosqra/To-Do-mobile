@@ -18,8 +18,8 @@ export const Back = styled.ImageBackground`
   align-items: center;
   flex-direction: column;
   background-color: #6a5acd;
-  margin-top: -13%;
-  margin-bottom: -13%;
+  margin-top: -18%;
+  margin-bottom: -18%;
 `;
 
 export const InputArea = styled.View`
@@ -58,29 +58,29 @@ export const ButtonsContainer = styled.View`
 export const DeleteBtn = styled.TouchableOpacity`
   background-color: #a056c5;
   padding: 10px;
-  width: 20%;
-  height: 100%;
+  width: 100px;
+  height: 70px;
   align-items: center;
   justify-content: center;
-  border-radius: 25px;
+  border-radius: 50px;
 `;
 
 export const EditBtn = styled.TouchableOpacity`
   background-color: blue;
   padding: 10px;
-  width: 20%;
-  height: 100%;
+  width: 100px;
+  height: 70px;
   align-items: center;
   justify-content: center;
   border-radius: 50px;
 `;
 
 export const DelIcon = styled(Icon).attrs({name: 'delete'})`
-  font-size: 25px;
+  font-size: 35px;
   color: white;
 `;
 
 export const EditIcon = styled(Icon).attrs({name: 'edit'})`
-  font-size: 25px;
+  font-size: 35px;
   color: white;
 `;

@@ -59,12 +59,14 @@ function Home() {
           <LoginImage source={tasksLife} />
           <Input
             placeholder="email"
+            placeholderTextColor="#fff"
             value={email}
             onChangeText={email => setEmail(email)}
           />
           <Input
             secureTextEntry
             placeholder="senha"
+            placeholderTextColor="#fff"
             value={password}
             onChangeText={password => setPass(password)}
           />

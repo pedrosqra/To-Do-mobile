@@ -47,7 +47,7 @@ export const AddText = styled.Text`
 `;
 
 export const AddIcon = styled(AntIcon).attrs({name: 'plus'})`
-  font-size: 35px;
+  font-size: 25px;
   color: white;
 `;
 
@@ -57,6 +57,8 @@ export const TasksIcon = styled(FA5Icon).attrs({name: 'tasks'})`
 `;
 
 export const Filter = styled.TouchableOpacity`
+  align-items: center;
+  justify-content: center;
   height: 55px;
   width: 15%;
   padding: 8px;

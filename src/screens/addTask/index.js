@@ -67,11 +67,13 @@ function RegisterScreen() {
           <AddTaskImage source={update} />
           <Input
             placeholder="título"
+            placeholderTextColor="#fff"
             value={name}
             onChangeText={n => setName(n)}
           />
           <Input
             placeholder="descrição (max. 40 caracteres)"
+            placeholderTextColor="#fff"
             value={description}
             onChangeText={d => setDescription(d)}
           />
@@ -100,7 +102,7 @@ function RegisterScreen() {
             </PriorityPicker>
           </Priority>
           <Register onPress={handleCreateTask}>
-            <ButtonText>Atualizar</ButtonText>
+            <ButtonText>Confirmar</ButtonText>
           </Register>
         </InputArea>
       </Back>
