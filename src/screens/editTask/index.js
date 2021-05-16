@@ -3,7 +3,6 @@ import {useNavigation} from '@react-navigation/native';
 import {Checkbox} from 'react-native-paper';
 import AsyncStorage from '@react-native-community/async-storage';
 import api from '../../services/api';
-import {Alert} from 'react-native';
 
 import {
   Input,
@@ -50,8 +49,8 @@ function RegisterScreen({route}) {
             },
           },
         );
+        navigation.navigate('Home');
       }
-      navigation.navigate('Home');
     } catch (err) {
       console.log(err);
     }
@@ -99,7 +98,7 @@ function RegisterScreen({route}) {
                 placeholder="alta"
                 status={checkedAlta ? 'checked' : 'unchecked'}
                 onPress={() => {
-                  handleSetPriorityAlta(!checkedAlta);
+                  handleSetPriorityAlta(!checkedAlta), setPriority('alta');
                 }}
               />
             </PriorityPicker>
@@ -109,7 +108,7 @@ function RegisterScreen({route}) {
                 placeholder="alta"
                 status={checkedBaixa ? 'checked' : 'unchecked'}
                 onPress={() => {
-                  handleSetPriorityBaixa(!checkedBaixa);
+                  handleSetPriorityBaixa(!checkedBaixa), setPriority('baixa');
                 }}
               />
             </PriorityPicker>
