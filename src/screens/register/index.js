@@ -20,8 +20,7 @@ function RegisterScreen() {
   const [email, setEmail] = useState('');
   const [password, setPass] = useState('');
 
-  async function handleRegister(e) {
-    e.preventDefault();
+  async function handleRegister() {
     console.log(email, password);
 
     try {
@@ -35,8 +34,8 @@ function RegisterScreen() {
       console.log(response.data.error);
     } catch (err) {
       Alert.alert(
-        'Falha no Login',
-        'Não foi possível realizar login. Cheque os campos e tente novamente',
+        'Falha no Registro',
+        'Não foi possível realizar o cadastro. Cheque os campos e tente novamente',
         [
           {
             text: 'Cancel',
@@ -56,17 +55,20 @@ function RegisterScreen() {
           <RegisterImage source={girlTask} />
           <Input
             placeholder="nickname"
+            placeholderTextColor="#fff"
             value={nickname}
             onChangeText={email => setNick(email)}
           />
           <Input
             placeholder="email"
+            placeholderTextColor="#fff"
             value={email}
             onChangeText={email => setEmail(email)}
           />
           <Input
             secureTextEntry
             placeholder="senha"
+            placeholderTextColor="#fff"
             value={password}
             onChangeText={password => setPass(password)}
           />
