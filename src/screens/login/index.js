@@ -24,10 +24,7 @@ function Home() {
   const [password, setPass] = useState('');
   AsyncStorage.setItem('token', '');
 
-  async function handleLogin(e) {
-    e.preventDefault();
-    console.log(email, password);
-
+  async function handleLogin() {
     try {
       const response = await api.post('/login', {email, password});
       await AsyncStorage.setItem('token', response.data.token);

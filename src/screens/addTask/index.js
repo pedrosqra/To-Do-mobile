@@ -27,7 +27,7 @@ function RegisterScreen() {
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState('baixa');
 
-  async function handleCreateTask(e) {
+  async function handleCreateTask() {
     try {
       getData();
       async function getData() {
@@ -44,7 +44,7 @@ function RegisterScreen() {
     }
   }
 
-  function handleSetPriorityAlta(e) {
+  function handleSetPriorityAlta() {
     if (checkedBaixa === false) {
       setCheckedAlta(!checkedAlta);
     } else {
@@ -52,7 +52,7 @@ function RegisterScreen() {
     }
   }
 
-  function handleSetPriorityBaixa(e) {
+  function handleSetPriorityBaixa() {
     if (checkedAlta === false) {
       setCheckedBaixa(!checkedBaixa);
     } else {

@@ -28,9 +28,7 @@ function RegisterScreen({route}) {
   const [TaskDescription, setDescription] = useState(description);
   const [priority, setPriority] = useState('baixa');
 
-  async function handleUpdate(e) {
-    e.preventDefault();
-
+  async function handleUpdate() {
     try {
       console.log(title, TaskDescription);
       getData();
