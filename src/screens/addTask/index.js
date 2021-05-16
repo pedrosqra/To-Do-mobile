@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Checkbox} from 'react-native-paper';
-
+import AsyncStorage from '@react-native-community/async-storage';
+import api from '../../services/api';
 import {
   Input,
   Register,
@@ -22,6 +23,35 @@ function RegisterScreen() {
   const navigation = useNavigation();
   const [checkedAlta, setCheckedAlta] = useState(false);
   const [checkedBaixa, setCheckedBaixa] = useState(false);
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [priority, setPriority] = useState('baixa');
+
+  async function handleCreateTask(e) {
+    await definePriority();
+    try {
+      getData();
+      async function getData() {
+        const token = await AsyncStorage.getItem('token');
+        const response = await api.post(
+          '/task',
+          {name, priority, description},
+          {headers: {Auth: 'Bearer ' + token}},
+        );
+        navigation.navigate('Home');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function definePriority() {
+    if (checkedAlta === true) {
+      setPriority('alta');
+    } else {
+      setPriority('baixa');
+    }
+  }
 
   function handleSetPriorityAlta(e) {
     if (checkedBaixa === false) {
@@ -39,20 +69,21 @@ function RegisterScreen() {
     }
   }
 
-  function handleCreateAccount() {
-    navigation.navigate('Home');
-  }
-
-  function handleCreateAccount() {
-    navigation.navigate('Home');
-  }
   return (
     <Container>
       <Back source={back}>
         <InputArea>
           <AddTaskImage source={update} />
-          <Input placeholder="título" />
-          <Input placeholder="descrição (max. 40 caracteres)" />
+          <Input
+            placeholder="título"
+            value={name}
+            onChangeText={n => setName(n)}
+          />
+          <Input
+            placeholder="descrição (max. 40 caracteres)"
+            value={description}
+            onChangeText={d => setDescription(d)}
+          />
           <Priority>
             <PriorityTitle>Prioridade: </PriorityTitle>
 
@@ -77,7 +108,7 @@ function RegisterScreen() {
               />
             </PriorityPicker>
           </Priority>
-          <Register onPress={handleCreateAccount}>
+          <Register onPress={handleCreateTask}>
             <ButtonText>Atualizar</ButtonText>
           </Register>
         </InputArea>

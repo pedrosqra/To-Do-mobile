@@ -16,7 +16,6 @@ import {Alert} from 'react-native';
 import back from '../../assets/login.png';
 import tasksLife from '../../assets/loginScreen.png';
 import api from '../../services/api';
-import Cookie from 'js-cookie';
 
 function Home() {
   const navigation = useNavigation();

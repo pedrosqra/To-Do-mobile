@@ -13,14 +13,12 @@ import back from '../../assets/login.png';
 import girlTask from '../../assets/girlTask.png';
 import api from '../../services/api';
 import {Alert} from 'react-native';
-import Cookie from 'js-cookie';
 
 function RegisterScreen() {
   const navigation = useNavigation();
   const [nickname, setNick] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPass] = useState('');
-  Cookie.set('token', '');
 
   async function handleRegister(e) {
     e.preventDefault();

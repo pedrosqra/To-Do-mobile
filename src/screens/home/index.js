@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useIsFocused} from '@react-navigation/native';
 import AsyncStorage from '@react-native-community/async-storage';
+
 import {
   Container,
   List,
@@ -15,13 +16,12 @@ import {
   Buttons,
 } from './styles';
 import Task from './components/Task';
-import Cookie from 'js-cookie';
 import api from '../../services/api';
 
 function Home() {
   const navigation = useNavigation();
   const [userTasks, setUserTasks] = useState([]);
-  const token = '';
+  const isFocused = useIsFocused();
 
   useEffect(() => {
     getData();
@@ -37,8 +37,7 @@ function Home() {
           setUserTasks(response.data);
         });
     }
-    console.log(token);
-  }, [userTasks.length, token]);
+  }, [userTasks.length, isFocused]);
 
   function handleTasksSorted(e) {
     e.preventDefault();
@@ -62,18 +61,18 @@ function Home() {
     }
   }
 
-  async function handleDeleteTask(id) {
-    try {
-      await api.delete(`/task/${id}`, {
-        headers: {
-          Auth: 'Bearer ' + token,
-        },
-      });
-      setUserTasks(userTasks.filter(task => task._id !== id));
-    } catch (error) {
-      alert('Erro ao deletar tarefa.');
-    }
-  }
+  // async function handleDeleteTask(id) {
+  //   try {
+  //     await api.delete(`/task/${id}`, {
+  //       headers: {
+  //         Auth: 'Bearer ' + token,
+  //       },
+  //     });
+  //     setUserTasks(userTasks.filter(task => task._id !== id));
+  //   } catch (error) {
+  //     alert('Erro ao deletar tarefa.');
+  //   }
+  // }
 
   function handleCreateTask() {
     navigation.navigate('Add');
