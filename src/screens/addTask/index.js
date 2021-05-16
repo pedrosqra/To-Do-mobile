@@ -22,7 +22,7 @@ import update from '../../assets/update.png';
 function RegisterScreen() {
   const navigation = useNavigation();
   const [checkedAlta, setCheckedAlta] = useState(false);
-  const [checkedBaixa, setCheckedBaixa] = useState(false);
+  const [checkedBaixa, setCheckedBaixa] = useState(true);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState('baixa');
@@ -47,16 +47,12 @@ function RegisterScreen() {
   function handleSetPriorityAlta() {
     if (checkedBaixa === false) {
       setCheckedAlta(!checkedAlta);
-    } else {
-      setCheckedAlta(false);
     }
   }
 
   function handleSetPriorityBaixa() {
     if (checkedAlta === false) {
       setCheckedBaixa(!checkedBaixa);
-    } else {
-      setCheckedBaixa(false);
     }
   }
 
@@ -72,7 +68,7 @@ function RegisterScreen() {
             onChangeText={n => setName(n)}
           />
           <Input
-            placeholder="descrição (max. 40 caracteres)"
+            placeholder="descrição"
             placeholderTextColor="#fff"
             value={description}
             onChangeText={d => setDescription(d)}

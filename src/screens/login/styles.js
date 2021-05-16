@@ -34,7 +34,7 @@ export const InputArea = styled.View`
 export const Input = styled.TextInput`
   background-color: #a9a9a9;
   width: 80%;
-  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 50px;
   padding: 12px;
   color: #fff;
@@ -45,7 +45,6 @@ export const Login = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   width: 80%;
-  margin-top: 10px;
   border-radius: 50px;
   padding: 15px;
 `;
@@ -74,7 +73,7 @@ export const Register = styled.TouchableOpacity`
 `;
 
 export const LoginImage = styled.Image`
-  width: 80%;
-  height: 40%;
+  width: 230px;
+  height: 230px;
   margin-bottom: 4%;
 `;

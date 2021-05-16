@@ -50,7 +50,7 @@ function RegisterScreen() {
         <InputArea>
           <RegisterImage source={girlTask} />
           <Input
-            placeholder="nickname"
+            placeholder="nickname (min 8 caracteres)"
             placeholderTextColor="#fff"
             value={nickname}
             onChangeText={email => setNick(email)}

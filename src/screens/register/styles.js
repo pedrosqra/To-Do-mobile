@@ -57,6 +57,6 @@ export const ButtonText = styled.Text`
 `;
 
 export const RegisterImage = styled.Image`
-  width: 80%;
-  height: 43%;
+  width: 230px;
+  height: 230px;
 `;

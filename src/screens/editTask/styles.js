@@ -34,7 +34,7 @@ export const InputArea = styled.View`
 export const Input = styled.TextInput`
   background-color: #a9a9a9;
   width: 80%;
-  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 50px;
   padding: 12px;
   color: #fff;
@@ -45,7 +45,7 @@ export const Update = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   width: 80%;
-  margin-top: 10px;
+  margin-top: 5px;
   border-radius: 50px;
   padding: 16px;
 `;
@@ -57,8 +57,9 @@ export const ButtonText = styled.Text`
 `;
 
 export const EditImage = styled.Image`
-  width: 60%;
-  height: 47%;
+  width: 195px;
+  height: 230px;
+  margin-bottom: 2%;
 `;
 
 export const Priority = styled.View`
