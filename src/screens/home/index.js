@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-community/async-storage';
 import {
   Container,
   List,
@@ -14,36 +15,65 @@ import {
   Buttons,
 } from './styles';
 import Task from './components/Task';
-
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad5328ba',
-    title: 'First Item',
-  },
-  {
-    id: '3acafc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-96-145571e29d72',
-    title: 'Third Item',
-  },
-];
+import Cookie from 'js-cookie';
+import api from '../../services/api';
 
 function Home() {
   const navigation = useNavigation();
+  const [userTasks, setUserTasks] = useState([]);
+  const token = '';
+
+  useEffect(() => {
+    getData();
+    async function getData() {
+      const token = await AsyncStorage.getItem('token');
+      api
+        .get('/tasks', {
+          headers: {
+            Auth: 'Bearer ' + token,
+          },
+        })
+        .then(response => {
+          setUserTasks(response.data);
+        });
+    }
+    console.log(token);
+  }, [userTasks.length, token]);
+
+  function handleTasksSorted(e) {
+    e.preventDefault();
+
+    try {
+      getData();
+      async function getData() {
+        const token = await AsyncStorage.getItem('token');
+        api
+          .get('/tasks/sorted', {
+            headers: {
+              Auth: 'Bearer ' + token,
+            },
+          })
+          .then(response => {
+            setUserTasks(response.data);
+          });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function handleDeleteTask(id) {
+    try {
+      await api.delete(`/task/${id}`, {
+        headers: {
+          Auth: 'Bearer ' + token,
+        },
+      });
+      setUserTasks(userTasks.filter(task => task._id !== id));
+    } catch (error) {
+      alert('Erro ao deletar tarefa.');
+    }
+  }
 
   function handleCreateTask() {
     navigation.navigate('Add');
@@ -56,16 +86,16 @@ function Home() {
         <Title>Suas Tarefas</Title>
       </TitleContainer>
       <List
-        data={DATA}
+        data={userTasks}
         renderItem={({item}) => <Task task={item} />}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item._id}
       />
       <Buttons>
         <Add onPress={handleCreateTask}>
           <AddIcon />
           <AddText>Adicionar</AddText>
         </Add>
-        <Filter>
+        <Filter onPress={handleTasksSorted}>
           <FilterIcon />
         </Filter>
       </Buttons>

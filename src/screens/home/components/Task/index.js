@@ -23,14 +23,14 @@ function Task({task}) {
     <Container>
       <View>
         <TaskData>
-          <Title>Taskzinha</Title>
+          <Title>{task.name}</Title>
           <Description
             numberOfLines={4}
             scrollEnabled
             editable={false}
             maxLength={40}
             multiline>
-            Pegar o carro e explodir depis cantar good 4 u
+            {task.description}
           </Description>
         </TaskData>
       </View>

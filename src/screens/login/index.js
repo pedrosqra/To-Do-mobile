@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-community/async-storage';
 import {
   Input,
   Login,
@@ -22,7 +23,7 @@ function Home() {
 
   const [email, setEmail] = useState('');
   const [password, setPass] = useState('');
-  Cookie.set('token', '');
+  AsyncStorage.setItem('token', '');
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -30,7 +31,7 @@ function Home() {
 
     try {
       const response = await api.post('/login', {email, password});
-      Cookie.set('token', response.data.token);
+      await AsyncStorage.setItem('token', response.data.token);
       navigation.navigate('Home');
     } catch (err) {
       console.log(err);
